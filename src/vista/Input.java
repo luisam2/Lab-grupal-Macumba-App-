@@ -1,6 +1,8 @@
 package vista;
 
 import controlP5.ControlP5;
+import controlP5.ControllerStyle;
+import controlP5.Label;
 import controlP5.Textfield;
 import processing.core.PApplet;
 import processing.core.PFont;
@@ -16,6 +18,7 @@ public class Input {
 	private int tamY;
 	private PFont font;
 	private String textValue;
+	private Textfield txtfield;
 	
 	public Input(ControlP5 cp5, PApplet app, int tipo, int posX, int posY, int tamX, int tamY) {
 		super();
@@ -30,11 +33,23 @@ public class Input {
 		
 		this.font = this.app.createFont("./font/gorditaregular.otf", 20);
 		
-		this.cp5.addTextfield("input")
+		this.txtfield = this.cp5.addTextfield("input")
 		.setPosition(this.posX, this.posY)
 		.setSize(this.tamX, this.tamY)
 		.setFont(this.font)
-		.setColor(this.app.color(255,0,0));
+		.setColor(this.app.color(0));
+		
+		  // next, get the Label class of that Textlabel  
+		  // and make changes to the background like this
+		  Label label = this.txtfield.getValueLabel();
+		  label.enableColorBackground().setColorBackground(255);
+
+		  // make changes to the style of the controller
+		  ControllerStyle style = label.getStyle();
+		  style.backgroundWidth = this.tamX;
+		  style.backgroundHeight = this.tamY;
+		  style.setPadding(10, 10, 10, 10);
+		
 		
 		 /* this.cp5.addTextfield("textValue")
 		     .setPosition(this.posX, this.posY)
