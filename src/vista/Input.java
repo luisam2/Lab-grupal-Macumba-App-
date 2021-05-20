@@ -36,7 +36,7 @@ public class Input {
 		.setFont(this.font)
 		.setColor(this.app.color(255,0,0));
 		
-		  this.cp5.addTextfield("textValue")
+		 /* this.cp5.addTextfield("textValue")
 		     .setPosition(this.posX, this.posY)
 		     .setSize(this.tamX, this.tamY)
 		     .setFont(this.font)
@@ -52,7 +52,7 @@ public class Input {
 		  this.cp5.addTextfield("default")
 		     .setPosition(this.posX, this.posY)
 		     .setAutoClear(false)
-		     ;
+		     ;*/
 		     
 		
 		this.app.textFont(font);
