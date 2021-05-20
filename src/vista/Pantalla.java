@@ -29,4 +29,52 @@ public abstract class Pantalla {
 	public abstract void pintarElementos();
 	
 	public abstract void clickElementos();
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+
+	public int getTamX() {
+		return tamX;
+	}
+
+	public void setTamX(int tamX) {
+		this.tamX = tamX;
+	}
+
+	public int getTamY() {
+		return tamY;
+	}
+
+	public void setTamY(int tamY) {
+		this.tamY = tamY;
+	}
+
+	public PImage getImgBackground() {
+		return imgBackground;
+	}
+
+	public void setImgBackground(PImage imgBackground) {
+		this.imgBackground = imgBackground;
+	}
+
+	public PApplet getApp() {
+		return app;
+	}
+
+	public void setApp(PApplet app) {
+		this.app = app;
+	}
 }
