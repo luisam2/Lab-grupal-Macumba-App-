@@ -14,6 +14,14 @@ public class Logica {
 	public void addUser(String usuario, String contraseña) {
 		usuarios.add(new Usuario(usuario, contraseña));
 	}
+
+	public ArrayList<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(ArrayList<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
 	
 	
 
