@@ -76,6 +76,7 @@ public class Principal extends PApplet {
 		switch (numeroPantalla) {
 		case 0:
 			inisesPantalla.clickElementos();
+			inisesPantalla.passScreen(numeroPantalla);
 			break;
 		case 1:
 
