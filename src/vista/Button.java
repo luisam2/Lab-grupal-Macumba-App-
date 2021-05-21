@@ -33,18 +33,18 @@ public class Button {
 	public void pintar() {
 		
 		this.app.rectMode(PConstants.CENTER);
-
-		this.app.textSize(24);
-		
+		this.app.textAlign(PConstants.CENTER,PConstants.CENTER);
+		this.app.textSize(16);
+		this.app.noStroke();
 		switch (this.tipo) {
 		case 0:
 			this.app.fill(255,112,51);
 			this.app.rect(posX, posY, tamX, tamY);
-			this.app.fill(0);
+			this.app.fill(255);
 			this.app.text(this.textInfo, posX, posY);
 			break;
 		case 1:
-			this.app.fill(0);
+			this.app.fill(255);
 			this.app.rect(posX, posY, tamX, tamY);
 			this.app.fill(255,112,51);
 			this.app.text(this.textInfo, posX, posY);
