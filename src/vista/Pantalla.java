@@ -1,5 +1,6 @@
 package vista;
 
+import controlP5.ControlP5;
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
@@ -11,9 +12,11 @@ public abstract class Pantalla {
 	protected int tamY;
 	protected PImage imgBackground;
 	protected PApplet app;
+	protected ControlP5 cp5;
 	
-	public Pantalla(PApplet app, PImage imgBackground) {
+	public Pantalla(PApplet app, ControlP5 cp5, PImage imgBackground) {
 		this.app = app;
+		this.cp5 = cp5;
 		this.imgBackground = imgBackground;
 		this.posX = 0;
 		this.posY = 0;
