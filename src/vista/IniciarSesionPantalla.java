@@ -12,8 +12,8 @@ public class IniciarSesionPantalla extends Pantalla{
 	private Button ingresar;
 	private Controlador control;
 
-	public IniciarSesionPantalla(PApplet app, ControlP5 cp5, PImage imgBackground) {
-		super(app,cp5, imgBackground);
+	public IniciarSesionPantalla(PApplet app, ControlP5 cp5, PImage imgBackground, int controlador) {
+		super(app,cp5, imgBackground, controlador);
 		// TODO Auto-generated constructor stub
 		control = new Controlador();
 		usuario =  new Input(cp5, app, 0, getTamX()/4, 300, 200, 25, "usuario");
@@ -24,9 +24,15 @@ public class IniciarSesionPantalla extends Pantalla{
 	@Override
 	public void pintarElementos() {
 		// TODO Auto-generated method stub
-		usuario.pintar();
-		contraseña.pintar();
+		
+			usuario.pintar();
+			contraseña.pintar();
+		
+		
+		
+		
 		ingresar.pintar();
+		
 	}
 
 	@Override
@@ -34,7 +40,11 @@ public class IniciarSesionPantalla extends Pantalla{
 		// TODO Auto-generated method stub
 		if(ingresar.isHover()) {
 			control.addUsers(usuario.getInfo(), contraseña.getInfo());
-			
+			this.controlador = passScreen(1);
+			if(this.controlador >0) {
+				usuario.hideInput();
+				contraseña.hideInput();
+			}
 		}
 	}
 

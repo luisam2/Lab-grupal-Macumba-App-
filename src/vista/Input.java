@@ -83,5 +83,9 @@ public class Input {
 		return this.txtfield.getText();
 	}
 	
+	public void hideInput() {
+		this.txtfield.hide();
+	}
+	
 	
 }

@@ -1,5 +1,6 @@
 package vista;
 
+
 import controlP5.ControlP5;
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -13,8 +14,9 @@ public abstract class Pantalla {
 	protected PImage imgBackground;
 	protected PApplet app;
 	protected ControlP5 cp5;
+	protected int controlador;
 	
-	public Pantalla(PApplet app, ControlP5 cp5, PImage imgBackground) {
+	public Pantalla(PApplet app, ControlP5 cp5, PImage imgBackground, int controlador) {
 		this.app = app;
 		this.cp5 = cp5;
 		this.imgBackground = imgBackground;
@@ -22,6 +24,7 @@ public abstract class Pantalla {
 		this.posY = 0;
 		this.tamX = 375;
 		this.tamY = 812;
+		this.controlador = controlador;
 	}
 	
 	public void pintarBackground() {
@@ -33,8 +36,14 @@ public abstract class Pantalla {
 	
 	public abstract void clickElementos();
 	
-	public void passScreen(int controladorPantalla) {
-		controladorPantalla = controladorPantalla++;
+	public int passScreen( int cantidad) {
+		return this.controlador = this.controlador+ cantidad;
+	}
+	
+	public int nextScreen(int controlador) {
+		
+		return controlador ;
+		
 	}
 
 	public int getPosX() {
