@@ -24,21 +24,21 @@ public class Button {
 		this.tamY = tamY;
 		this.tipo = tipo;
 		this.textInfo = textInfo;
-		
+
 		this.font = this.app.createFont("./font/GorditaMedium.otf", 14);
-		
+
 		this.app.textFont(this.font);
 	}
 
 	public void pintar() {
-		
+
 		this.app.rectMode(PConstants.CENTER);
-		this.app.textAlign(PConstants.CENTER,PConstants.CENTER);
+		this.app.textAlign(PConstants.CENTER, PConstants.CENTER);
 		this.app.textSize(16);
 		this.app.noStroke();
 		switch (this.tipo) {
 		case 0:
-			this.app.fill(255,112,51);
+			this.app.fill(255, 112, 51);
 			this.app.rect(posX, posY, tamX, tamY);
 			this.app.fill(255);
 			this.app.text(this.textInfo, posX, posY);
@@ -46,25 +46,40 @@ public class Button {
 		case 1:
 			this.app.fill(255);
 			this.app.rect(posX, posY, tamX, tamY);
-			this.app.fill(255,112,51);
+			this.app.fill(255, 112, 51);
 			this.app.text(this.textInfo, posX, posY);
 			break;
-		
+
+		}
+
+		if (this.app.mouseX > (this.posX - (this.tamX / 2)) && this.app.mouseX < (this.posX + (this.tamX / 2))
+				&& this.app.mouseY > (this.posY - (this.tamY / 2)) && this.app.mouseY < (this.posY + (this.tamY / 2))) {
+			switch (this.tipo) {
+			case 0:
+				this.app.fill(217, 89, 72);
+				this.app.rect(posX, posY, tamX, tamY);
+				this.app.fill(200);
+				this.app.text(this.textInfo, posX, posY);
+				break;
+			case 1:
+				this.app.fill(200);
+				this.app.rect(posX, posY, tamX, tamY);
+				this.app.fill(217, 89, 721);
+				this.app.text(this.textInfo, posX, posY);
+				break;
+
+			}
 		}
 	}
-	
+
 	public boolean isHover() {
 		boolean isSobre = false;
-	      
-        if (
-            this.app.mouseX > (this.posX - (this.tamX / 2)) &&
-            this.app.mouseX < (this.posX + (this.tamX / 2)) &&
-            this.app.mouseY > (this.posY - (this.tamY / 2)) &&
-            this.app.mouseY < (this.posY + (this.tamY / 2))
-        ) {
-            isSobre = true;
-        }
-        return isSobre;
+
+		if (this.app.mouseX > (this.posX - (this.tamX / 2)) && this.app.mouseX < (this.posX + (this.tamX / 2))
+				&& this.app.mouseY > (this.posY - (this.tamY / 2)) && this.app.mouseY < (this.posY + (this.tamY / 2))) {
+			isSobre = true;
+		}
+		return isSobre;
 	}
 
 }
