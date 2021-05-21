@@ -32,6 +32,10 @@ public abstract class Pantalla {
 	public abstract void pintarElementos();
 	
 	public abstract void clickElementos();
+	
+	public void passScreen(int controladorPantalla) {
+		controladorPantalla = controladorPantalla++;
+	}
 
 	public int getPosX() {
 		return posX;
