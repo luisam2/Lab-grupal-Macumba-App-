@@ -13,8 +13,7 @@ public class Principal extends PApplet {
 	}
 	
 	ControlP5 cp5;
-	Input test;
-
+	IniciarSesionPantalla inisesPantalla;
 	@Override
 	public void settings() {
 		size(375, 812);
@@ -25,13 +24,17 @@ public class Principal extends PApplet {
 	@Override
 	public void setup() {
 		cp5 = new ControlP5(this);
-		test = new Input(cp5, this, 0, 200, 200, 100, 50);
+		inisesPantalla = new IniciarSesionPantalla(this, cp5, loadImage("./../img/Inicio.png"));
 	}
 	
 	@Override
 	public void draw() {
 		background(255);
-		test.pintar();
-		text("sdfd",50,50);
+		inisesPantalla.pintarBackground();
+		inisesPantalla.pintarElementos();
+	}
+	
+	public void mousePressed() {
+		inisesPantalla.clickElementos();
 	}
 }

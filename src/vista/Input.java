@@ -20,7 +20,7 @@ public class Input {
 	private String textValue;
 	private Textfield txtfield;
 	
-	public Input(ControlP5 cp5, PApplet app, int tipo, int posX, int posY, int tamX, int tamY) {
+	public Input(ControlP5 cp5, PApplet app, int tipo, int posX, int posY, int tamX, int tamY, String textValue) {
 		super();
 		this.cp5 = cp5;
 		this.app = app;
@@ -29,11 +29,11 @@ public class Input {
 		this.posY = posY;
 		this.tamX = tamX;
 		this.tamY = tamY;
-		this.textValue = "funciona";
+		this.textValue = textValue;
 		
-		this.font = this.app.createFont("./font/gorditaregular.otf", 20);
+		this.font = this.app.createFont("./font/gorditaregular.otf", 14);
 		
-		this.txtfield = this.cp5.addTextfield("input")
+		this.txtfield = this.cp5.addTextfield(this.textValue)
 		.setPosition(this.posX, this.posY)
 		.setSize(this.tamX, this.tamY)
 		.setFont(this.font)
@@ -46,9 +46,9 @@ public class Input {
 
 		  // make changes to the style of the controller
 		  ControllerStyle style = label.getStyle();
-		  style.backgroundWidth = this.tamX;
+		  style.backgroundWidth = this.tamX+20;
 		  style.backgroundHeight = this.tamY;
-		  style.setPadding(10, 10, 10, 10);
+		  style.setPadding(0, 5, 0, 5);
 		
 		
 		 /* this.cp5.addTextfield("textValue")
@@ -75,8 +75,12 @@ public class Input {
 
 	public void pintar() {
 		this.app.fill(255);
-		this.app.text(this.cp5.get(Textfield.class,"input").getText(), 360,130);
+		this.app.text(this.cp5.get(Textfield.class,this.textValue).getText(), 360,130);
 		 this.app.text(textValue, 360,180);
+	}
+	
+	public String getInfo() {
+		return this.txtfield.getText();
 	}
 	
 	
