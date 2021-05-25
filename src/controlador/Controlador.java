@@ -25,4 +25,10 @@ public class Controlador {
 	public ArrayList<Producto> getProductos() {
 		return this.logica.getProductos();
 	}
+	
+	public String getIDSelectedProduct(String id) {
+		
+		return id;
+		
+	}
 }
