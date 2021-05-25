@@ -3,6 +3,7 @@ package controlador;
 import java.util.ArrayList;
 
 import modelo.Logica;
+import modelo.Producto;
 import modelo.Usuario;
 
 public class Controlador {
@@ -19,5 +20,9 @@ public class Controlador {
 	 
 	public ArrayList<Usuario> getUsers() {
 		return this.logica.getUsuarios();
+	}
+	
+	public ArrayList<Producto> getProductos() {
+		return this.logica.getProductos();
 	}
 }

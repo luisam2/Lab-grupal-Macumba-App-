@@ -44,6 +44,7 @@ public class Principal extends PApplet {
 			break;
 		case 1:
 			menuPantalla.pintarBackground();
+			menuPantalla.pintarElementos();
 			break;
 		case 2:
 
