@@ -19,7 +19,7 @@ public class MenuPantalla extends Pantalla {
 		productosVisibles = new ArrayList<VistaProducto>();
 		
 		for (int i = 0; i < control.getProductos().size(); i++) {
-			productosVisibles.add(new VistaProducto(control.getProductos().get(i), 0,20 ,20+150*i ,100 , 120, app));
+			productosVisibles.add(new VistaProducto(control.getProductos().get(i), 0,100 ,20+150*i ,100 , 120, app));
 		}
 	}
 

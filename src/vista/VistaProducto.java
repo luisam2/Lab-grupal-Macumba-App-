@@ -31,16 +31,25 @@ public class VistaProducto {
 		this.app.textAlign(PConstants.CENTER, PConstants.CENTER);
 		switch (this.tipo) {
 		case 0:
-			this.app.fill(220);
-			this.app.rect( posX, posY, tamX, tamY);
-			this.app.fill(0);
-			this.app.textSize(14);
-			this.app.text(this.producto.getName(), posX + tamX/2, posY+ tamY/9);
-			this.app.textSize(16);
-			this.app.text(this.producto.getPrice(), posX + tamX/2, posY+ tamY/4);
 			if(isHover()) {
-				
+				this.app.fill(180);
+				this.app.rect( posX, posY, tamX, tamY);
+				this.app.fill(0);
+				this.app.textSize(14);
+				this.app.text(this.producto.getName(), posX + 5, posY+ tamY/9);
+				this.app.textSize(16);
+				this.app.text(this.producto.getPrice(), posX + 5, posY+ tamY/4);
+			} else {
+				this.app.fill(220);
+				this.app.rect( posX, posY, tamX, tamY);
+				this.app.fill(0);
+				this.app.textSize(14);
+				this.app.text(this.producto.getName(), posX + 5, posY+ tamY/9);
+				this.app.textSize(16);
+				this.app.text(this.producto.getPrice(), posX + 5, posY+ tamY/4);
 			}
+			
+			
 			break;
 		case 1:
 			
