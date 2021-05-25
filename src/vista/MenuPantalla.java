@@ -34,7 +34,11 @@ public class MenuPantalla extends Pantalla {
 	@Override
 	public void clickElementos() {
 		// TODO Auto-generated method stub
-		
+		for (VistaProducto vistaProducto : productosVisibles) {
+			if(vistaProducto.isHover()) {
+				this.controlador = passScreen(1);
+			}
+		}
 	}
 
 }

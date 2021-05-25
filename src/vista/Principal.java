@@ -82,7 +82,8 @@ public class Principal extends PApplet {
 			numeroPantalla = inisesPantalla.nextScreen(inisesPantalla.controlador);
 			break;
 		case 1:
-
+			menuPantalla.clickElementos();
+			
 			break;
 		case 2:
 
