@@ -73,4 +73,60 @@ public class VistaProducto {
 		}
 		return isSobre;
 	}
+
+	public PApplet getApp() {
+		return app;
+	}
+
+	public void setApp(PApplet app) {
+		this.app = app;
+	}
+
+	public int getPosX() {
+		return posX;
+	}
+
+	public void setPosX(int posX) {
+		this.posX = posX;
+	}
+
+	public int getPosY() {
+		return posY;
+	}
+
+	public void setPosY(int posY) {
+		this.posY = posY;
+	}
+
+	public int getTamX() {
+		return tamX;
+	}
+
+	public void setTamX(int tamX) {
+		this.tamX = tamX;
+	}
+
+	public int getTamY() {
+		return tamY;
+	}
+
+	public void setTamY(int tamY) {
+		this.tamY = tamY;
+	}
+
+	public int getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
+
+	public Producto getProducto() {
+		return producto;
+	}
+
+	public void setProducto(Producto producto) {
+		this.producto = producto;
+	}
 }
