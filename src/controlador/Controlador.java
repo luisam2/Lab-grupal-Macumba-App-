@@ -26,9 +26,8 @@ public class Controlador {
 		return this.logica.getProductos();
 	}
 	
-	public String getIDSelectedProduct(String id) {
-		
-		return id;
+	public int getIDSelectedProduct(int i) {
+		return i;
 		
 	}
 }

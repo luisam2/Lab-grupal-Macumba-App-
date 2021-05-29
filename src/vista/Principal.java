@@ -16,6 +16,7 @@ public class Principal extends PApplet {
 	ControlP5 cp5;
 	IniciarSesionPantalla inisesPantalla;
 	MenuPantalla menuPantalla;
+	ProductoPantalla productoPantalla;
 	int numeroPantalla;
 
 	@Override
@@ -30,6 +31,7 @@ public class Principal extends PApplet {
 		numeroPantalla = 0;
 		inisesPantalla = new IniciarSesionPantalla(this, cp5, loadImage("./../img/Inicio.png"), numeroPantalla);
 		menuPantalla = new MenuPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla);
+		productoPantalla = new ProductoPantalla(this, cp5, null, numeroPantalla);
 	}
 
 	@Override
@@ -47,7 +49,7 @@ public class Principal extends PApplet {
 			menuPantalla.pintarElementos();
 			break;
 		case 2:
-
+			
 			break;
 		case 3:
 
@@ -83,7 +85,7 @@ public class Principal extends PApplet {
 			break;
 		case 1:
 			menuPantalla.clickElementos();
-			
+			numeroPantalla = menuPantalla.nextScreen(menuPantalla.controlador);
 			break;
 		case 2:
 
