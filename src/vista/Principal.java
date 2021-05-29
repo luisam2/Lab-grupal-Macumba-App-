@@ -31,7 +31,7 @@ public class Principal extends PApplet {
 		numeroPantalla = 0;
 		inisesPantalla = new IniciarSesionPantalla(this, cp5, loadImage("./../img/Inicio.png"), numeroPantalla);
 		menuPantalla = new MenuPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla);
-		productoPantalla = new ProductoPantalla(this, cp5, null, numeroPantalla);
+		productoPantalla = new ProductoPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla,0);
 	}
 
 	@Override
@@ -49,7 +49,8 @@ public class Principal extends PApplet {
 			menuPantalla.pintarElementos();
 			break;
 		case 2:
-			
+			productoPantalla.pintarBackground();
+			productoPantalla.pintarElementos();
 			break;
 		case 3:
 
