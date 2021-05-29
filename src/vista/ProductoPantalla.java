@@ -32,7 +32,10 @@ public class ProductoPantalla extends Pantalla{
 	@Override
 	public void clickElementos() {
 		// TODO Auto-generated method stub
-		
+		if(agregar.isHover()) {
+			this.controlador = passScreen(1);
+			System.out.println(this.controlador);
+		}
 	}
 	
 	public void changeProducto() {
