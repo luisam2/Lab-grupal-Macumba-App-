@@ -86,6 +86,8 @@ public class Principal extends PApplet {
 			break;
 		case 1:
 			menuPantalla.clickElementos();
+			productoPantalla.setIdProducto(menuPantalla.productoSeleccionado());
+			productoPantalla.changeProducto();
 			numeroPantalla = menuPantalla.nextScreen(menuPantalla.controlador);
 			break;
 		case 2:

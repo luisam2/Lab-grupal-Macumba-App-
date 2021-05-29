@@ -36,10 +36,15 @@ public class MenuPantalla extends Pantalla {
 		// TODO Auto-generated method stub
 		for (VistaProducto vistaProducto : productosVisibles) {
 			if(vistaProducto.isHover()) {
-				this.control.getIDSelectedProduct(vistaProducto.getProducto().getID());
+				this.control.setIDselectedProduct(vistaProducto.getProducto().getID());
 				this.controlador = passScreen(1);
 			}
 		}
 	}
+	
+	public int productoSeleccionado() {
+		return this.control.getIDSelectedProduct();
+	}
+	
 
 }

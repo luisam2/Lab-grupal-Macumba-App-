@@ -9,6 +9,7 @@ import modelo.Usuario;
 public class Controlador {
 
 	private Logica logica;
+	private int selectedProduct;
 	
 	public Controlador() {
 		this.logica = new Logica();
@@ -26,8 +27,12 @@ public class Controlador {
 		return this.logica.getProductos();
 	}
 	
-	public int getIDSelectedProduct(int i) {
-		return i;
+	public int getIDSelectedProduct() {
+		return selectedProduct;
 		
+	}
+	
+	public void setIDselectedProduct(int i) {
+		selectedProduct = i;
 	}
 }

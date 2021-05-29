@@ -19,6 +19,8 @@ public class ProductoPantalla extends Pantalla{
 		changeProducto();
 	}
 
+	
+
 	@Override
 	public void pintarElementos() {
 		// TODO Auto-generated method stub
@@ -48,6 +50,22 @@ public class ProductoPantalla extends Pantalla{
 			this.imgProducto = this.app.loadImage("./../img/plato4.png");
 			break;
 		}
+	}
+	
+	public int getIdProducto() {
+		return idProducto;
+	}
+
+	public void setIdProducto(int idProducto) {
+		this.idProducto = idProducto;
+	}
+
+	public PImage getImgProducto() {
+		return imgProducto;
+	}
+
+	public void setImgProducto(PImage imgProducto) {
+		this.imgProducto = imgProducto;
 	}
 
 }
