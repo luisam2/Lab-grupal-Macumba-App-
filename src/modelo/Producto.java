@@ -6,6 +6,8 @@ public class Producto {
 	private String price;
 	private int ID;
 	private String fileName;
+	private int cantidad;
+	private String tipo;
 	
 	public Producto(String name, String price, int iD, String fileName) {
 		super();
@@ -13,7 +15,22 @@ public class Producto {
 		this.price = price;
 		this.ID = iD;
 		this.fileName = fileName;
+		this.cantidad = 1;
 	}
+	
+	
+
+	public Producto(String name, String price, int iD, String fileName, int cantidad, String tipo) {
+		super();
+		this.name = name;
+		this.price = price;
+		this.ID = iD;
+		this.fileName = fileName;
+		this.cantidad = cantidad;
+		this.tipo = tipo;
+	}
+
+
 
 	public String getName() {
 		return name;
@@ -45,6 +62,18 @@ public class Producto {
 
 	public void setFileName(String fileName) {
 		this.fileName = fileName;
+	}
+
+
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
 	}
 	
 	
