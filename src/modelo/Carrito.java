@@ -29,16 +29,19 @@ private  String fecha;
 		return precioFinal;
 	}
 
-	public void setPrecioFinal(int precioFinal) {
-		this.precioFinal = precioFinal;
+	public void setPrecioFinal() {
+		this.precioFinal = 0;
+		for (Producto producto : this.productos) {
+			this.precioFinal+= Integer.parseInt(producto.getPrice()) ;
+		}
 	}
 
 	public int getCantidadElementos() {
 		return cantidadElementos;
 	}
 
-	public void setCantidadElementos(int cantidadElementos) {
-		this.cantidadElementos = cantidadElementos;
+	public void setCantidadElementos() {
+		this.cantidadElementos = this.getProductos().size();
 	}
 
 	public ArrayList<Producto> getProductos() {
