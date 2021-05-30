@@ -12,7 +12,7 @@ public class Controlador {
 	private int selectedProduct;
 	
 	public Controlador() {
-		this.logica = new Logica();
+		this.logica = Logica.getInstancia();
 	}
 	
 	public void addUsers(String usuario,String contraseña) {

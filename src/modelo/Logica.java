@@ -10,7 +10,7 @@ public class Logica {
 	ArrayList<Producto> pedidoActual;
 	ArrayList<Carrito> compras;
 
-	public Logica() {
+	private Logica() {
 		super();
 		usuarios = new ArrayList<>();
 		productos = new ArrayList<>();
@@ -30,6 +30,15 @@ public class Logica {
 		adiciones.add(new Producto("Papas", "10", 4, "",0,"pasabocas"));
 		adiciones.add(new Producto("Patacones", "15", 5, "",0,"pasabocas"));
 		
+	}
+	
+	protected static Logica logica;
+	
+	public static Logica getInstancia() {
+		if(logica==null) {
+			logica = new Logica();
+		}
+		return logica;
 	}
 	
 	
