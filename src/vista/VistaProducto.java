@@ -15,6 +15,9 @@ public class VistaProducto {
 	private int tipo;
 	private Producto producto;
 	private PImage img;
+	private Button añadir;
+	private Button quitar;
+	private boolean onAñadir;
 
 	public VistaProducto(Producto producto, int tipo, int posX, int posY, int tamX, int tamY,  PApplet app) {
 		super();
@@ -25,6 +28,10 @@ public class VistaProducto {
 		this.tamX = tamX;
 		this.tamY = tamY;
 		this.tipo = tipo;
+		this.añadir = new Button(app,posX + 20,posY + 50,20,20,2,"añadir",app.loadImage("./../img/botonmas.png"));
+		this.quitar = new Button(app,posX + 50,posY + 50,20,20,2,"quitar",app.loadImage("./../img/botonmenos.png"));
+		this.onAñadir = true;
+
 	}
 	
 	public VistaProducto(Producto producto, int tipo, int posX, int posY, int tamX, int tamY,  PApplet app, PImage img) {
@@ -37,7 +44,12 @@ public class VistaProducto {
 		this.tamY = tamY;
 		this.tipo = tipo;
 		this.img = img;
+		this.añadir = new Button(app,posX + 20,posY + 50,20,20,2,"añadir",app.loadImage("./../img/botonmas.png"));
+		this.quitar = new Button(app,posX + 50,posY + 50,20,20,2,"quitar",app.loadImage("./../img/botonmenos.png"));
+		this.onAñadir = true;
 	}
+	
+	
 	
 	public void pintar() {
 		this.app.imageMode(PConstants.CENTER);
@@ -76,6 +88,13 @@ public class VistaProducto {
 
 		}
 		
+		if(onAñadir) {
+			this.añadir.pintar();
+			this.quitar.pintar();
+			this.app.text(this.producto.getCantidad(),posX + 20,posY + 50);
+			System.out.println("dandole");
+		}
+		
 		
 	}
 	
@@ -89,6 +108,18 @@ public class VistaProducto {
 					isSobre = true;
 		}
 		return isSobre;
+	}
+	
+	public void click() {
+		if(onAñadir) {
+			if(añadir.isHover()) {
+				this.producto.setCantidad(this.producto.getCantidad()+1);
+			}
+			if(quitar.isHover()) {
+				this.producto.setCantidad(this.producto.getCantidad()-1);
+			}
+		}
+		
 	}
 
 	public PApplet getApp() {

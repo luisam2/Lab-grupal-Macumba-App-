@@ -75,6 +75,14 @@ public class AdicionesPantalla extends Pantalla {
 			bebidasBtn.setImg(app.loadImage("./../img/bebidas.png"));
 			pasabocasBtn.setImg(app.loadImage("./../img/pasabocas_select.png"));
 		}
+		
+		for (VistaProducto vistaProducto : adicionesBebidasVista) {
+			vistaProducto.click();
+		}
+		
+		for (VistaProducto vistaProducto : adicionesPasabocasVista) {
+			vistaProducto.click();
+		}
 	}
 
 }
