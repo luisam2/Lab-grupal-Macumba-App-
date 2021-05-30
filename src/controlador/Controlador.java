@@ -27,6 +27,11 @@ public class Controlador {
 		return this.logica.getProductos();
 	}
 	
+	public ArrayList<Producto> getAdiciones() {
+		return this.logica.getAdiciones();
+		
+	}
+	
 	public int getIDSelectedProduct() {
 		return selectedProduct;
 		

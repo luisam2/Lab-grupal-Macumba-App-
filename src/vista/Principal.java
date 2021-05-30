@@ -98,7 +98,7 @@ public class Principal extends PApplet {
 			numeroPantalla = productoPantalla.nextScreen(productoPantalla.controlador);
 			break;
 		case 3:
-			
+			adicionesPantalla.clickElementos();
 			break;
 		case 4:
 

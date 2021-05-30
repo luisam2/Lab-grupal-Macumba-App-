@@ -19,7 +19,12 @@ public class Logica {
 		productos.add(new Producto("Casuela de marriscos", "40", 2, ""));
 		productos.add(new Producto("Empanadas de camaron", "10", 3, ""));
 		
-		adiciones.add(new Producto());
+		adiciones.add(new Producto("Cholado", "10", 0, "",0,"bebida"));
+		adiciones.add(new Producto("Champus", "5", 1, "",0,"bebida"));
+		adiciones.add(new Producto("Chicha", "5", 2, "",0,"bebida"));
+		adiciones.add(new Producto("Limonada", "9", 3, "",0,"bebida"));
+		adiciones.add(new Producto("Papas", "10", 4, "",0,"pasabocas"));
+		adiciones.add(new Producto("Patacones", "15", 5, "",0,"pasabocas"));
 		
 	}
 	
@@ -41,6 +46,14 @@ public class Logica {
 
 	public void setUsuarios(ArrayList<Usuario> usuarios) {
 		this.usuarios = usuarios;
+	}
+
+	public ArrayList<Producto> getAdiciones() {
+		return adiciones;
+	}
+
+	public void setAdiciones(ArrayList<Producto> adiciones) {
+		this.adiciones = adiciones;
 	}
 	
 	
