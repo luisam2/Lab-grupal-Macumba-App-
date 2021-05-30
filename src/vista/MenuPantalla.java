@@ -37,14 +37,16 @@ public class MenuPantalla extends Pantalla {
 		for (VistaProducto vistaProducto : productosVisibles) {
 			if(vistaProducto.isHover()) {
 				this.control.setIDselectedProduct(vistaProducto.getProducto().getID());
-				this.controlador = passScreen(1);
+				
 			}
 		}
+		this.controlador = passScreen(1);
 	}
 	
 	public int productoSeleccionado() {
 		return this.control.getIDSelectedProduct();
 	}
+	
 	
 
 }

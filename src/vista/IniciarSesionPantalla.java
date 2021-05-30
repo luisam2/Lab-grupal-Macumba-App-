@@ -40,7 +40,7 @@ public class IniciarSesionPantalla extends Pantalla{
 		// TODO Auto-generated method stub
 		if(ingresar.isHover()) {
 			control.addUsers(usuario.getInfo(), contraseña.getInfo());
-			this.controlador = passScreen(1);
+			this.controlador = passScreen(this.controlador+1);
 			if(this.controlador >0) {
 				usuario.hideInput();
 				contraseña.hideInput();

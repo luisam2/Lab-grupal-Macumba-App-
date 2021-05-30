@@ -56,6 +56,7 @@ public class Principal extends PApplet {
 			break;
 		case 3:
 			adicionesPantalla.pintarBackground();
+			adicionesPantalla.pintarElementos();
 			break;
 		case 4:
 
