@@ -14,11 +14,11 @@ public class Carrito {
 	
 private  String fecha;
 	
-	public Carrito() {
+	public Carrito(ArrayList<Producto> pedido) {
 		super();
 		this.precioFinal = 0;
 		this.cantidadElementos = 0;
-		this.productos = new ArrayList<Producto>();
+		this.productos = pedido;
 		this.fecha = formatter.format(date);
 		
 	}

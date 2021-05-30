@@ -41,6 +41,14 @@ public class Logica {
 		pedidoActual.add(nuevoElemento);
 	}
 	
+	public void confirmarPedido(ArrayList<Producto> pedido) {
+		Carrito newCarrito = new Carrito(pedido);
+		newCarrito.setPrecioFinal();
+		newCarrito.setCantidadElementos();
+		compras.add(newCarrito);
+		
+	}
+	
 	
 	//////////getters y setters
 
