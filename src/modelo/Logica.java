@@ -7,12 +7,16 @@ public class Logica {
 	ArrayList<Usuario> usuarios;
 	ArrayList<Producto> productos;
 	ArrayList<Producto> adiciones;
+	ArrayList<Producto> pedidoActual;
+	ArrayList<Carrito> compras;
 
 	public Logica() {
 		super();
 		usuarios = new ArrayList<>();
 		productos = new ArrayList<>();
 		adiciones = new ArrayList<Producto>();
+		pedidoActual = new ArrayList<Producto>();
+		compras = new ArrayList<Carrito>();
 		
 		productos.add(new Producto("Ceviche", "30", 0, ""));
 		productos.add(new Producto("Arroz atollado", "25", 1, ""));
@@ -28,9 +32,17 @@ public class Logica {
 		
 	}
 	
+	
 	public void addUser(String usuario, String contraseña) {
 		usuarios.add(new Usuario(usuario, contraseña));
 	}
+	
+	public void addPedidoActual(Producto nuevoElemento) {
+		pedidoActual.add(nuevoElemento);
+	}
+	
+	
+	//////////getters y setters
 
 	public ArrayList<Usuario> getUsuarios() {
 		return usuarios;
@@ -54,6 +66,26 @@ public class Logica {
 
 	public void setAdiciones(ArrayList<Producto> adiciones) {
 		this.adiciones = adiciones;
+	}
+
+
+	public ArrayList<Producto> getPedidoActual() {
+		return pedidoActual;
+	}
+
+
+	public void setPedidoActual(ArrayList<Producto> pedidoActual) {
+		this.pedidoActual = pedidoActual;
+	}
+
+
+	public ArrayList<Carrito> getCompras() {
+		return compras;
+	}
+
+
+	public void setCompras(ArrayList<Carrito> compras) {
+		this.compras = compras;
 	}
 	
 	

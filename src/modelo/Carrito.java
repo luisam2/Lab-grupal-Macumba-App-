@@ -23,6 +23,8 @@ private  String fecha;
 		
 	}
 	
+	
+	
 	public int getPrecioFinal() {
 		return precioFinal;
 	}
