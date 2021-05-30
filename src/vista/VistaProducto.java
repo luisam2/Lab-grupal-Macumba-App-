@@ -3,6 +3,7 @@ package vista;
 import modelo.Producto;
 import processing.core.PApplet;
 import processing.core.PConstants;
+import processing.core.PImage;
 
 public class VistaProducto {
 	
@@ -13,6 +14,7 @@ public class VistaProducto {
 	private int tamY;
 	private int tipo;
 	private Producto producto;
+	private PImage img;
 
 	public VistaProducto(Producto producto, int tipo, int posX, int posY, int tamX, int tamY,  PApplet app) {
 		super();
@@ -23,6 +25,18 @@ public class VistaProducto {
 		this.tamX = tamX;
 		this.tamY = tamY;
 		this.tipo = tipo;
+	}
+	
+	public VistaProducto(Producto producto, int tipo, int posX, int posY, int tamX, int tamY,  PApplet app, PImage img) {
+		super();
+		this.producto = producto;
+		this.app = app;
+		this.posX = posX;
+		this.posY = posY;
+		this.tamX = tamX;
+		this.tamY = tamY;
+		this.tipo = tipo;
+		this.img = img;
 	}
 	
 	public void pintar() {
@@ -49,10 +63,13 @@ public class VistaProducto {
 				this.app.text(this.producto.getPrice(), posX + 5, posY+ tamY/4);
 			}
 			
-			
 			break;
 		case 1:
-			
+			if(isHover()) {
+				
+			} else {
+				
+			}
 			break;
 		case 2:
 			break;
@@ -128,5 +145,13 @@ public class VistaProducto {
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	public PImage getImg() {
+		return img;
+	}
+
+	public void setImg(PImage img) {
+		this.img = img;
 	}
 }

@@ -20,8 +20,8 @@ public class AdicionesPantalla extends Pantalla {
 	public AdicionesPantalla(PApplet app, ControlP5 cp5, PImage imgBackground, int controlador) {
 		super(app, cp5, imgBackground, controlador);
 		// TODO Auto-generated constructor stub
-		bebidasBtn = new Button(app, getTamX() / 2 - 100, 200, 150, 40, 0, "Bebidas");
-		pasabocasBtn = new Button(app, getTamX() / 2 + 100, 200, 150, 40, 0, "Pasabocas");
+		bebidasBtn = new Button(app, getTamX() / 2 - 100, 200, 150, 40, 2, "Bebidas", app.loadImage("./../img/bebidas_select.png"));
+		pasabocasBtn = new Button(app, getTamX() / 2 + 100, 200, 150, 40, 2, "Pasabocas",app.loadImage("./../img/pasabocas.png"));
 		control = new Controlador();
 		adicionesPasabocasVista = new ArrayList<VistaProducto>();
 		adicionesBebidasVista = new ArrayList<VistaProducto>();
@@ -65,10 +65,15 @@ public class AdicionesPantalla extends Pantalla {
 		// TODO Auto-generated method stub
 		if (bebidasBtn.isHover()) {
 			isPasabocas = false;
+			bebidasBtn.setImg(app.loadImage("./../img/bebidas_select.png"));
+			pasabocasBtn.setImg(app.loadImage("./../img/pasabocas.png"));
+			
 		}
 
 		if (pasabocasBtn.isHover()) {
 			isPasabocas = true;
+			bebidasBtn.setImg(app.loadImage("./../img/bebidas.png"));
+			pasabocasBtn.setImg(app.loadImage("./../img/pasabocas_select.png"));
 		}
 	}
 
