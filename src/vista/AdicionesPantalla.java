@@ -84,5 +84,21 @@ public class AdicionesPantalla extends Pantalla {
 			vistaProducto.click();
 		}
 	}
+	
+	public void añadirAdiciones() {
+		for (VistaProducto vistaProducto : adicionesBebidasVista) {
+			if(vistaProducto.getProducto().getCantidad()>0) {
+				this.control.addProductos(vistaProducto.getProducto());
+			}
+			
+		}
+		
+		for (VistaProducto vistaProducto : adicionesPasabocasVista) {
+			if(vistaProducto.getProducto().getCantidad()>0) {
+				this.control.addProductos(vistaProducto.getProducto());
+			}
+			
+		}
+	}
 
 }

@@ -92,7 +92,7 @@ public class VistaProducto {
 			this.añadir.pintar();
 			this.quitar.pintar();
 			this.app.text(this.producto.getCantidad(),posX + 20,posY + 50);
-			System.out.println("dandole");
+			
 		}
 		
 		

@@ -1,6 +1,8 @@
 package vista;
 
 import controlP5.ControlP5;
+import controlador.Controlador;
+import modelo.Producto;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -9,12 +11,14 @@ public class ProductoPantalla extends Pantalla{
 	private Button agregar;
 	private int idProducto;
 	private PImage imgProducto;
+	private Controlador control;
 
 	public ProductoPantalla(PApplet app, ControlP5 cp5, PImage imgBackground, int controlador, int idProducto) {
 		super(app, cp5, imgBackground, controlador);
 		// TODO Auto-generated constructor stub
 		agregar = new Button(app, getTamX()/2, 700, 200, 40, 0, "Agregar");
 		this.idProducto = idProducto;
+		this.control = new Controlador();
 		
 		changeProducto();
 	}
@@ -34,6 +38,11 @@ public class ProductoPantalla extends Pantalla{
 		// TODO Auto-generated method stub
 		if(agregar.isHover()) {
 			this.controlador = passScreen(1);
+			for (Producto iterable : this.control.getProductos() ) {
+				if(iterable.getID() == this.idProducto) {
+					this.control.addProductos(iterable);
+				}
+			}
 			System.out.println(this.controlador);
 		}
 	}

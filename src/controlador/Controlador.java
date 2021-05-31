@@ -18,6 +18,10 @@ public class Controlador {
 	public void addUsers(String usuario,String contraseña) {
 		this.logica.addUser(usuario, contraseña);
 	}
+	
+	public void addProductos(Producto producto) {
+		this.logica.addPedidoActual(producto);
+	}
 	 
 	public ArrayList<Usuario> getUsers() {
 		return this.logica.getUsuarios();
