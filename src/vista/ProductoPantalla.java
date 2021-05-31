@@ -12,14 +12,15 @@ public class ProductoPantalla extends Pantalla{
 	private int idProducto;
 	private PImage imgProducto;
 	private Controlador control;
+	private Producto producto;
 
 	public ProductoPantalla(PApplet app, ControlP5 cp5, PImage imgBackground, int controlador, int idProducto) {
 		super(app, cp5, imgBackground, controlador);
 		// TODO Auto-generated constructor stub
-		agregar = new Button(app, getTamX()/2, 700, 200, 40, 0, "Agregar");
+		this.agregar = new Button(app, getTamX()/2, 700, 200, 40, 0, "Agregar");
 		this.idProducto = idProducto;
 		this.control = new Controlador();
-		
+		this.producto = null;
 		changeProducto();
 	}
 
@@ -29,24 +30,25 @@ public class ProductoPantalla extends Pantalla{
 	public void pintarElementos() {
 		// TODO Auto-generated method stub
 		this.app.image(imgProducto, this.tamX/2, this.tamY/2,this.tamX,this.tamY);
-		agregar.pintar();
+		this.agregar.pintar();
 		
 	}
 
 	@Override
 	public boolean clickElementos() {
 		// TODO Auto-generated method stub
-		if(agregar.isHover()) {
+		
+		if(this.agregar.isHover()) {
 			
-			for (Producto iterable : this.control.getProductos() ) {
-				if(iterable.getID() == this.idProducto) {
-					this.control.addProductos(iterable);
-				}
-			}
+			
+			System.out.println("dfdf");
+			this.control.addProductos(this.producto);
 			return true;
 			
+		} else {
+			return false;
 		}
-		return false;
+		
 	}
 	
 	public void changeProducto() {
@@ -72,6 +74,13 @@ public class ProductoPantalla extends Pantalla{
 
 	public void setIdProducto(int idProducto) {
 		this.idProducto = idProducto;
+		
+		for (int i=0;i< this.control.getProductos().size();i++ ) {
+			if(this.control.getProductos().get(i).getID() == this.idProducto) {
+				
+				this.producto = this.control.getProductos().get(i);
+			}
+		}
 	}
 
 	public PImage getImgProducto() {

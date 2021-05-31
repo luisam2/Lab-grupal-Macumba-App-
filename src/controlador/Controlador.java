@@ -36,6 +36,12 @@ public class Controlador {
 		
 	}
 	
+	public ArrayList<Producto> getPedidoActual() {
+		return this.logica.getPedidoActual();
+		
+	}
+	
+	
 	public int getIDSelectedProduct() {
 		return selectedProduct;
 		
@@ -43,5 +49,10 @@ public class Controlador {
 	
 	public void setIDselectedProduct(int i) {
 		selectedProduct = i;
+	}
+
+	public void finalizarPedido() {
+		// TODO Auto-generated method stub
+		this.logica.confirmarPedido(getPedidoActual());
 	}
 }

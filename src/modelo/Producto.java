@@ -16,6 +16,7 @@ public class Producto {
 		this.ID = iD;
 		this.fileName = fileName;
 		this.cantidad = 1;
+		this.tipo = "plato";
 	}
 	
 	

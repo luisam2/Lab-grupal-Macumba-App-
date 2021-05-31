@@ -68,6 +68,17 @@ public class AdicionesPantalla extends Pantalla {
 	@Override
 	public boolean clickElementos() {
 		// TODO Auto-generated method stub
+
+		
+		if(agregar.isHover()) {
+			añadirAdiciones();
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	public void click() {
 		if (bebidasBtn.isHover()) {
 			isPasabocas = false;
 			bebidasBtn.setImg(app.loadImage("./../img/bebidas_select.png"));
@@ -88,12 +99,6 @@ public class AdicionesPantalla extends Pantalla {
 		for (VistaProducto vistaProducto : adicionesPasabocasVista) {
 			vistaProducto.click();
 		}
-		
-		if(agregar.isHover()) {
-			añadirAdiciones();
-			return true;
-		}
-		return false;
 	}
 	
 	public void añadirAdiciones() {

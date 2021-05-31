@@ -62,6 +62,7 @@ public class Principal extends PApplet {
 			break;
 		case 4:
 			historialPantalla.pintarBackground();
+			historialPantalla.pintarElementos();
 			break;
 		case 5:
 
@@ -83,7 +84,7 @@ public class Principal extends PApplet {
 	}
 
 	public void mousePressed() {
-		System.out.println(numeroPantalla);
+		//System.out.println(numeroPantalla);
 		switch (numeroPantalla) {
 		case 0:
 			inisesPantalla.clickElementos();
@@ -102,21 +103,24 @@ public class Principal extends PApplet {
 			
 			break;
 		case 2:
-			productoPantalla.clickElementos();
 			if(productoPantalla.clickElementos()) {
 				numeroPantalla =3;
 			}
 			
+			
+			
 			break;
 		case 3:
-			adicionesPantalla.clickElementos();
-			if(productoPantalla.clickElementos()) {
+			adicionesPantalla.click();
+			if(adicionesPantalla.clickElementos()) {
 				numeroPantalla = 4;
 			}
 			
 			break;
 		case 4:
-
+			if(historialPantalla.clickElementos()) {
+				numeroPantalla = 1;
+			}
 			break;
 		case 5:
 

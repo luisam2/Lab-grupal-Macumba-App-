@@ -55,7 +55,7 @@ public class Logica {
 		newCarrito.setPrecioFinal();
 		newCarrito.setCantidadElementos();
 		compras.add(newCarrito);
-		
+		pedidoActual.removeAll(pedidoActual);
 	}
 	
 	
