@@ -34,7 +34,7 @@ public abstract class Pantalla {
 	
 	public abstract void pintarElementos();
 	
-	public abstract void clickElementos();
+	public abstract boolean clickElementos();
 	
 	public int passScreen( int cantidad) {
 		return this.controlador = this.controlador+ cantidad;

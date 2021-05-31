@@ -32,15 +32,16 @@ public class MenuPantalla extends Pantalla {
 	}
 
 	@Override
-	public void clickElementos() {
+	public boolean clickElementos() {
 		// TODO Auto-generated method stub
 		for (VistaProducto vistaProducto : productosVisibles) {
 			if(vistaProducto.isHover()) {
 				this.control.setIDselectedProduct(vistaProducto.getProducto().getID());
-				
+				return true;
 			}
 		}
-		this.controlador = passScreen(1);
+		
+		return false;
 	}
 	
 	public int productoSeleccionado() {

@@ -22,7 +22,8 @@ public class HistorialPantalla extends Pantalla{
 	}
 
 	@Override
-	public void clickElementos() {
+	public boolean clickElementos() {
+		return false;
 		// TODO Auto-generated method stub
 		
 	}

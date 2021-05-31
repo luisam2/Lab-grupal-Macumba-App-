@@ -36,7 +36,7 @@ public class IniciarSesionPantalla extends Pantalla{
 	}
 
 	@Override
-	public void clickElementos() {
+	public boolean clickElementos() {
 		// TODO Auto-generated method stub
 		if(ingresar.isHover()) {
 			control.addUsers(usuario.getInfo(), contraseña.getInfo());
@@ -45,7 +45,9 @@ public class IniciarSesionPantalla extends Pantalla{
 				usuario.hideInput();
 				contraseña.hideInput();
 			}
+			return true;
 		}
+		return false;
 	}
 
 }

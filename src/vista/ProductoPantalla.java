@@ -34,7 +34,7 @@ public class ProductoPantalla extends Pantalla{
 	}
 
 	@Override
-	public void clickElementos() {
+	public boolean clickElementos() {
 		// TODO Auto-generated method stub
 		if(agregar.isHover()) {
 			
@@ -43,9 +43,10 @@ public class ProductoPantalla extends Pantalla{
 					this.control.addProductos(iterable);
 				}
 			}
-			this.controlador = passScreen(1);
-			System.out.println(this.controlador);
+			return true;
+			
 		}
+		return false;
 	}
 	
 	public void changeProducto() {

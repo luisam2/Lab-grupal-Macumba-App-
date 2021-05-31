@@ -66,7 +66,7 @@ public class AdicionesPantalla extends Pantalla {
 	}
 
 	@Override
-	public void clickElementos() {
+	public boolean clickElementos() {
 		// TODO Auto-generated method stub
 		if (bebidasBtn.isHover()) {
 			isPasabocas = false;
@@ -91,8 +91,9 @@ public class AdicionesPantalla extends Pantalla {
 		
 		if(agregar.isHover()) {
 			añadirAdiciones();
-			this.controlador = passScreen(1);
+			return true;
 		}
+		return false;
 	}
 	
 	public void añadirAdiciones() {

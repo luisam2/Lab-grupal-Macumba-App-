@@ -87,21 +87,33 @@ public class Principal extends PApplet {
 		switch (numeroPantalla) {
 		case 0:
 			inisesPantalla.clickElementos();
-			numeroPantalla = 1;
+			if(inisesPantalla.clickElementos()) {
+				numeroPantalla = 1;
+			}
+			
 			break;
 		case 1:
 			menuPantalla.clickElementos();
 			productoPantalla.setIdProducto(menuPantalla.productoSeleccionado());
 			productoPantalla.changeProducto();
-			numeroPantalla = 2;
+			if(menuPantalla.clickElementos()) {
+				numeroPantalla = 2;
+			}
+			
 			break;
 		case 2:
 			productoPantalla.clickElementos();
-			numeroPantalla =3;
+			if(productoPantalla.clickElementos()) {
+				numeroPantalla =3;
+			}
+			
 			break;
 		case 3:
 			adicionesPantalla.clickElementos();
-			numeroPantalla = 4;
+			if(productoPantalla.clickElementos()) {
+				numeroPantalla = 4;
+			}
+			
 			break;
 		case 4:
 
