@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Carrito {
+public class Carrito implements Comparable<Carrito>{
 	
 	private int precioFinal;
 	private int cantidadElementos;
@@ -74,6 +74,11 @@ private  String fecha;
 
 	public void setFecha(String fecha) {
 		this.fecha = fecha;
+	}
+	
+	public int compareTo(Carrito o) {
+		// TODO Auto-generated method stub
+		return this.fecha.compareTo(o.getFecha());
 	}
 
 	

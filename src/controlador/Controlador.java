@@ -2,6 +2,7 @@ package controlador;
 
 import java.util.ArrayList;
 
+import modelo.Carrito;
 import modelo.Logica;
 import modelo.Producto;
 import modelo.Usuario;
@@ -41,10 +42,19 @@ public class Controlador {
 		
 	}
 	
+	public ArrayList<Carrito> getCompras() {
+		return this.logica.getCompras();
+		
+	}
+	
 	
 	public int getIDSelectedProduct() {
 		return selectedProduct;
 		
+	}
+	
+	public void ordenar(String p) {
+		this.logica.OrdenarCarrito(p);
 	}
 	
 	public void setIDselectedProduct(int i) {

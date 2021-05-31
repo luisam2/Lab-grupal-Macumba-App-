@@ -1,6 +1,8 @@
 package modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class Logica {
 
@@ -9,6 +11,7 @@ public class Logica {
 	ArrayList<Producto> adiciones;
 	ArrayList<Producto> pedidoActual;
 	ArrayList<Carrito> compras;
+	private CompararPrecio ordenarP;
 
 	private Logica() {
 		super();
@@ -29,6 +32,8 @@ public class Logica {
 		adiciones.add(new Producto("Limonada", "9", 3, "",0,"bebida"));
 		adiciones.add(new Producto("Papas", "10", 4, "",0,"pasabocas"));
 		adiciones.add(new Producto("Patacones", "15", 5, "",0,"pasabocas"));
+		
+		ordenarP = new CompararPrecio();
 		
 	}
 	
@@ -58,6 +63,17 @@ public class Logica {
 		pedidoActual.removeAll(pedidoActual);
 	}
 	
+	public void OrdenarCarrito(String key) {
+		switch (key) {
+		case "precio":
+			Collections.sort(compras, ordenarP);
+			break;
+		case "fecha":
+			Collections.sort(compras);
+			break;
+
+		}
+	}
 	
 	//////////getters y setters
 
