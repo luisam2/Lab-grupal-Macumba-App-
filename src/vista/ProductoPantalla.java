@@ -37,12 +37,13 @@ public class ProductoPantalla extends Pantalla{
 	public void clickElementos() {
 		// TODO Auto-generated method stub
 		if(agregar.isHover()) {
-			this.controlador = passScreen(1);
+			
 			for (Producto iterable : this.control.getProductos() ) {
 				if(iterable.getID() == this.idProducto) {
 					this.control.addProductos(iterable);
 				}
 			}
+			this.controlador = passScreen(1);
 			System.out.println(this.controlador);
 		}
 	}

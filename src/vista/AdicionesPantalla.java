@@ -16,6 +16,7 @@ public class AdicionesPantalla extends Pantalla {
 	private ArrayList<VistaProducto> adicionesBebidasVista;
 	private Controlador control;
 	private boolean isPasabocas;
+	private Button agregar;
 
 	public AdicionesPantalla(PApplet app, ControlP5 cp5, PImage imgBackground, int controlador) {
 		super(app, cp5, imgBackground, controlador);
@@ -40,6 +41,8 @@ public class AdicionesPantalla extends Pantalla {
 						.add(new VistaProducto(control.getAdiciones().get(i), 0, 100, 20 + 150 * i, 100, 120, app));
 			}
 		}
+		
+		this.agregar =  new Button(app, getTamX()/2, 700, 200, 40, 0, "Agregar");
 	}
 
 	@Override
@@ -57,6 +60,8 @@ public class AdicionesPantalla extends Pantalla {
 
 		bebidasBtn.pintar();
 		pasabocasBtn.pintar();
+		
+		agregar.pintar();
 
 	}
 
@@ -82,6 +87,11 @@ public class AdicionesPantalla extends Pantalla {
 		
 		for (VistaProducto vistaProducto : adicionesPasabocasVista) {
 			vistaProducto.click();
+		}
+		
+		if(agregar.isHover()) {
+			añadirAdiciones();
+			this.controlador = passScreen(1);
 		}
 	}
 	
