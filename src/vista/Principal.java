@@ -19,6 +19,8 @@ public class Principal extends PApplet {
 	ProductoPantalla productoPantalla;
 	AdicionesPantalla adicionesPantalla;
 	HistorialPantalla historialPantalla;
+	PedidosViejosPantalla pedviePantalla;
+	Navegacion nav;
 	int numeroPantalla;
 
 	@Override
@@ -31,11 +33,13 @@ public class Principal extends PApplet {
 	public void setup() {
 		cp5 = new ControlP5(this);
 		numeroPantalla = 0;
+		nav = new Navegacion(this);
 		inisesPantalla = new IniciarSesionPantalla(this, cp5, loadImage("./../img/Inicio.png"), numeroPantalla);
 		menuPantalla = new MenuPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla);
 		productoPantalla = new ProductoPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla,0);
 		adicionesPantalla = new AdicionesPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla);
 		historialPantalla = new HistorialPantalla(this, cp5, loadImage("./../img/aprobado_factura.png"), numeroPantalla);
+		pedviePantalla = new PedidosViejosPantalla(this, cp5, loadImage("./../img/base_general.png"), numeroPantalla);
 	}
 
 	@Override
@@ -51,6 +55,7 @@ public class Principal extends PApplet {
 		case 1:
 			menuPantalla.pintarBackground();
 			menuPantalla.pintarElementos();
+			nav.pintar();
 			break;
 		case 2:
 			productoPantalla.pintarBackground();
@@ -63,12 +68,15 @@ public class Principal extends PApplet {
 		case 4:
 			historialPantalla.pintarBackground();
 			historialPantalla.pintarElementos();
+			nav.pintar();
 			break;
 		case 5:
-
+			pedviePantalla.pintarBackground();
+			pedviePantalla.pintarElementos();
+			nav.pintar();
 			break;
 		case 6:
-
+			nav.pintar();
 			break;
 		case 7:
 
@@ -85,6 +93,7 @@ public class Principal extends PApplet {
 
 	public void mousePressed() {
 		//System.out.println(numeroPantalla);
+		
 		switch (numeroPantalla) {
 		case 0:
 			inisesPantalla.clickElementos();
@@ -99,7 +108,10 @@ public class Principal extends PApplet {
 			productoPantalla.changeProducto();
 			if(menuPantalla.clickElementos()) {
 				numeroPantalla = 2;
+			} else {
+				numeroPantalla = nav.click();
 			}
+			
 			
 			break;
 		case 2:
@@ -120,13 +132,25 @@ public class Principal extends PApplet {
 		case 4:
 			if(historialPantalla.clickElementos()) {
 				numeroPantalla = 1;
-			}
+				this.pedviePantalla.agregarCompra();
+			} 
+			 else {
+					numeroPantalla = nav.click();
+				}
 			break;
 		case 5:
-
+			pedviePantalla.click();
+			if(pedviePantalla.clickElementos()) {
+				
+			}
+			 else {
+					numeroPantalla = nav.click();
+				}
 			break;
 		case 6:
-
+			 
+					numeroPantalla = nav.click();
+				
 			break;
 		case 7:
 
